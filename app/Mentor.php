@@ -10,11 +10,11 @@ use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Model implements JWTSubject, AuthenticatableContract, AuthorizableContract
+class Mentor extends Model implements JWTSubject, AuthenticatableContract, AuthorizableContract
 {
     use Authenticatable, Authorizable;
 
-    protected $table = 'users';
+    protected $table = 'mentors';
     /**
      * The attributes that are mass assignable.
      *

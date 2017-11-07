@@ -36,7 +36,33 @@ class Authenticate
      */
     public function handle($request, Closure $next, $guard = null)
     {
-       if($request['error']){
+        // if ($this->auth->guard($guard)->guest()) {
+        //     return response('Unauthorized.', 401);
+        // }
+
+        // return $next($request);
+        
+        // try {
+        //     if (! $user = $this->auth->parseToken()->authenticate()) {
+        //         return response()->json(['status' => 'fail',
+        //                 'message' => 'user_not_found']);
+        //     }
+        // } catch (\Tymon\JWTAuth\Exceptions\TokenInvalidException $e) {
+        //     return response()->json(['status' => 'fail',
+        //                 'message' => 'token_invalid']);
+        // } catch (\Tymon\JWTAuth\Exceptions\TokenExpiredException $e) {
+        //     return response()->json(['status' => 'fail',
+        //                 'message' => 'token_expired']);
+        // } catch (\Tymon\JWTAuth\Exceptions\JWTException $e) {
+        //     return response()->json(['status' => 'fail',
+        //                 'message' => 'token_absent']);
+        // }
+
+        // $request->merge(['auth_user' => $this->auth->user()]);
+
+        // return $next($request);
+        
+        if($request['error']){
             return response()->json(['status' => 'fail', 'message' => $request->error]);
         }
 
